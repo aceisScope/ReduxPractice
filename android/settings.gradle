@@ -1,0 +1,3 @@
+rootProject.name = 'RxProject'
+
+include ':app'
