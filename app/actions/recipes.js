@@ -14,9 +14,17 @@ export function fetchRecipes(ingredients) {
       'p=3'
     ].join('&');
     return Api.get(`/api/?${params}`).then(resp => {
-      console.log(resp);
+      dispatch(setSearchedRecipes({ recipes: resp }));
     }).catch( (ex) => {
       console.log(ex);
     });
+  }
+}
+
+// { recipes } in the payload
+export function setSearchedRecipes({ recipes }) {
+  return {
+    type: types.SET_SEARCHED_RECIPES,
+    recipes
   }
 }
