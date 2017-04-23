@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  TouchableHighlight,
-} from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../actions';
+import Home from './Home';
 
 class AppContainer extends Component {
 
@@ -15,18 +11,10 @@ class AppContainer extends Component {
   }
 
   render() {
-    return (
-      <View>
-        <Text style = {{marginTop: 20}}>
-         I am App Container! Recipe Count: { this.props.recipeCount }
-        </Text>
-        <TouchableHighlight onPress = {() => { this.addRecipe() }}>
-          <Text>Add Recipe</Text>
-        </TouchableHighlight>
-      </View>
-    );
+    // pass this.props to Home, so Home has access to all the Actions
+    return <Home {...this.props} />
   }
-  
+
 }
 
 // match dispatched actions with props
@@ -35,7 +23,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect((state) => {
-  return {
-    recipeCount: state.recipeCount
-  }
+  return {}
 }, mapDispatchToProps)(AppContainer);

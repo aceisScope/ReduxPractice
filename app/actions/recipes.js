@@ -5,3 +5,7 @@ export function addRecipe() {
     type: types.ADD_RECIPE,
   }
 }
+
+export function fetchRecipes(ingredients) {
+  
+}
