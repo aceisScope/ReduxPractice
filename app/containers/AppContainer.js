@@ -14,8 +14,8 @@ class AppContainer extends Component {
     this.state = { recipeCount: 0 }
   }
 
-  incrementRecipeCount() {
-    this.setState({ recipeCount: this.state.recipeCount + 1 });
+  addRecipe() {
+    this.props.addRecipe();
   }
 
   render() {
@@ -24,7 +24,7 @@ class AppContainer extends Component {
         <Text style = {{marginTop: 20}}>
          I am App Container! Recipe Count: { this.state.recipeCount }
         </Text>
-        <TouchableHighlight onPress = {() => { this.incrementRecipeCount() }}>
+        <TouchableHighlight onPress = {() => { this.addRecipe() }}>
           <Text>Add Recipe</Text>
         </TouchableHighlight>
       </View>
