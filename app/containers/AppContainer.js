@@ -11,7 +11,7 @@ class AppContainer extends Component {
   }
 
   render() {
-    // pass this.props to Home, so Home has access to all the Actions
+    // pass this.props to Home, so Home has access to all the ActionCreators
     return <Home {...this.props} />
   }
 
